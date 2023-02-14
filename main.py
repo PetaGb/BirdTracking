@@ -15,7 +15,7 @@ dotenv_path = Path('/home/peter/PycharmProjects/BirdTracking/.env')
 load_dotenv(dotenv_path=dotenv_path)
 
 api_key = os.getenv("API_KEY")
-#"AIzaSyC00_XUTfguqC-QIuFD4cdOAe_EA6jSpsg"
+
 
 bokeh_width, bokeh_height = 500, 400
 lat, lon = 46.2437, 6.0251
