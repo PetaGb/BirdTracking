@@ -11,7 +11,7 @@ import os
 app = Flask(__name__)
 
 
-dotenv_path = Path('/home/peter/PycharmProjects/BirdTracking/.env')
+dotenv_path = Path('/.env')
 load_dotenv(dotenv_path=dotenv_path)
 
 api_key = os.getenv("API_KEY")
