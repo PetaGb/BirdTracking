@@ -16,7 +16,6 @@ load_dotenv(dotenv_path=dotenv_path)
 
 api_key = os.getenv("API_KEY")
 
-
 bokeh_width, bokeh_height = 500, 400
 lat, lon = 46.2437, 6.0251
 
