@@ -23,19 +23,18 @@ def plot(lat, lng, zoom=5, map_type='roadmap'):
     p.legend.title = "Circles legend"
     p.legend.click_policy = "hide"
 
-    p.add_tools(ZoomInTool(), ZoomOutTool(), TapTool())
     hover = HoverTool(tooltips=[("Name", "Mirabell"), ("URL", f'{url}')])
     p.add_tools(hover)
+    p.add_tools(ZoomInTool(), ZoomOutTool(), TapTool())
     taptool = p.select(type=TapTool)
     taptool.callback = OpenURL(url=url)
 
-    circles(latitudes, longitudes, p)
+    circles(p)
 
     return p
 
 
-
-def circles(latitudes, longitudes, p):
+def circles(p):
 
     red = p.circle(longitudes[:180], latitudes[:180], size=7, alpha=0.5, color='red', legend_label="spring move")
     blue = p.circle(longitudes[180:], latitudes[180:], size=7, alpha=0.5, color='blue', legend_label="autumn move")
