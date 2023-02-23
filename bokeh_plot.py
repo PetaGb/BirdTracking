@@ -28,7 +28,9 @@ def plot(lat, lng, zoom=5, map_type='roadmap'):
     p.add_tools(hover)
     taptool = p.select(type=TapTool)
     taptool.callback = OpenURL(url=url)
+
     circles(latitudes, longitudes, p)
+
     return p
 
 
