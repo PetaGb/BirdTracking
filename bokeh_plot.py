@@ -55,5 +55,4 @@ def triangle(p):
 
     return black
 
-
 # TODOS: castom taptool
