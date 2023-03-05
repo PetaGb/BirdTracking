@@ -11,11 +11,13 @@ longitudes = df["location_longitude"].values
 date = pd.to_datetime(df["timestamp"]).values
 latitude = 47.7352829
 longitude = 8.9074951
-url = "https://en.wikipedia.org/wiki/White_stork"
+url = "http://localhost:8000/redirect.html"
+#url = "/home/peter/PycharmProjects/BirdTracking/templates/redirect.html"
+#url = "https://en.wikipedia.org/wiki/White_stork"
 #image_path = "/home/peter/Desktop/stork/stork_cropped.png"
 image_path = "https://upload.wikimedia.org/wikipedia/commons/f/f1/White_stork_%28Ciconia_ciconia%29_standing.jpg"
 
-
+#python -m http.server
 
 
 def plot(lat, lng, zoom=5, map_type="roadmap"):
@@ -62,8 +64,3 @@ def triangle(p):
     p.add_tools(black_hover, black_taptool)
 
     return black
-
-
-
-
-
