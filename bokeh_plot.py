@@ -46,17 +46,17 @@ def circles(p):
 def black_triangle(p):
     latitude = 47.7352829
     longitude = 8.9074951
-    url = "http://localhost:8000/redirect.html"
+    url = "http://127.0.0.1:5000/redirect.html"
     black_image_path = "https://upload.wikimedia.org/wikipedia/commons/f/f1/White_stork_%28Ciconia_ciconia%29_standing.jpg"
     black = p.triangle(longitude, latitude, size=15, alpha=0.5, color='black', legend_label="interactive black",
                        name="black")
     img_src = f'<img src="{black_image_path}" height="70", width="70">'
     tooltip = f'<div>Latitude: {latitude}<br>Longitude: {longitude}<br>Name: Mirabell<br>URL: {url}<br>{img_src}</div>'
-    pink_hover = HoverTool(tooltips=tooltip, renderers=[black])
-    pink_taptool = TapTool(renderers=[black],
-                            callback=CustomJS(args=dict(url=url), code="""window.location.href = url;"""))
+    black_hover = HoverTool(tooltips=tooltip, renderers=[black])
+    black_taptool = TapTool(renderers=[black], callback=CustomJS(args=dict(url=url),
+                                                                 code="""window.location.replace(url)"""))
 
-    p.add_tools(pink_hover, pink_taptool)
+    p.add_tools(black_hover, black_taptool)
 
     return black
 
@@ -64,7 +64,7 @@ def black_triangle(p):
 def pink_triangle(p):
     latitude = 41.610
     longitude = 0.618
-    url = "http://localhost:80001/redirect_2.html"
+    url = "http://127.0.0.1:5000/redirect_2.html"
     pink_image_path = "https://streetartutopia.com/wp-content/uploads/2021/03/Street-Art-Mural-of-a-stork-nest-by-street-artist-muralist-and-painter-Oriol-Arumi-in-Lleida-Spain-2-1068x1068.jpg"
     pink = p.star(longitude, latitude, size=35, alpha=0.5, color='green', legend_label="interactive pink",
                        name="pink")
