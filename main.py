@@ -21,14 +21,10 @@ def index():
     script, div = components(p)
     return render_template("index.html", script=script, div=div)
 
-@app.route("/redirect.html")
-def redirect():
-    return render_template("redirect.html")
 
-@app.route("/redirect_2.html")
-def redirect_2():
-    return render_template("redirect_2.html")
-
+@app.route("/<page>")
+def dynamic_routes(page):
+    return render_template(f"{page}.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
